@@ -1,0 +1,17 @@
+
+==================================================
+HOSTNAME: <%= @hostname %>
+IPADDR:   <%= @ipaddress %>
+==================================================
+<%- if @hostname =~ /agent1/ -%>
+<%- for task in ['telnet','vsftpd','samba'] -%>
+check if following packages are installed
+<%= task %>
+<%- end -%>
+<%- elsif @hostname =~ /agent3/ -%>
+check if following packages are installed
+<%- for task in ['screen','wget'] -%>
+<%= task %>
+<%- end -%>
+<%- end -%>
+
